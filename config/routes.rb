@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   
   resources :members_only_articles, only: [:index, :show]
 
+  resources :users, only: [:create]
+
   get "/me", to: "users#show"
 
   post "/login", to: "sessions#create"
